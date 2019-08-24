@@ -1,0 +1,261 @@
+/* positionnement des pastilles */ 
+#slider_accueil {
+    top: -20px;
+}
+
+#collectifs {
+    margin-left:60px; 
+    float: left;
+}
+
+#particuliers {
+    margin-top:-40px;
+    margin-left:10px;
+    float: left;
+}
+
+#coaching {
+    margin-top: -110px;
+    margin-left:100px;
+    float: left;
+}
+
+/* reserrement des items de menu dans le footer */
+.fusion-widget-area .widget_nav_menu li {
+    border-bottom: 0;
+}
+
+/* menu principal */
+#menu-menu-principal {
+    text-transform: uppercase;
+}
+
+.fusion-main-menu {
+    top:-10px;
+}
+
+/*
+.page-id-8655 #main {
+    top:-45px;
+    position: relative;
+    z-index:999999;
+}
+*/
+.read-more {
+    color: #e2001a !important;
+}
+
+h1, h2 {
+    text-transform: uppercase;
+}
+
+p {
+    text-align: justify;
+}
+
+form p {
+    text-align: left;
+}
+
+.fusion-footer-widget-column .menu li {
+    padding:0;
+}
+
+.widget-title {
+    text-transform: uppercase;
+}
+
+.brand-color {
+    color: #e2001a;
+}
+
+#news .post {
+	margin-bottom: 10px;
+}
+
+ul#news {
+    padding-left: 0;
+}
+
+#news li {
+	list-style: none;
+	margin: 0;
+}
+
+#news .post small {
+	margin: 0;
+	padding: 0;
+	font-size: 11px;
+	font-weight: bold;
+	color: #e2001a;
+}
+
+#news .post h5 {
+	margin: 0;
+	padding: 0;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #e2001a;
+	text-transform: none;
+	text-align: left;
+}
+
+#news a {
+    color: #e2001a;
+}
+
+#news p {
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+#wrapper .fusion-widget-area .current-menu-item > a {
+	color: #ffffff;
+}
+
+#list_docu {
+	margin-top: 20px;
+}
+
+#list_docu li {
+	float: left;
+	width: 190px;
+	height: 85px;
+	margin: 0 30px 40px 0;
+	padding: 0;
+	list-style: none;
+}
+
+#list_docu > li > .picto {
+	float: left;
+	margin-right: 5px;
+}
+
+#list_docu li h2 {
+	margin: 0;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	text-transform: none;
+	text-align: left;
+	color: #e2001a;
+}
+
+#downloads li {
+	margin: 0;
+	padding: 5px 0;
+	list-style: none;
+	padding-left: 25px;
+/*	background: url('/wp-content/uploads/2018/11/dl.png') no-repeat left center;*/
+}
+
+
+#downloads li:before {
+    content: "\F15B";  /* this is your text. You can also use UTF-8 character codes as I do here */
+    font-family: "Font Awesome 5 Free";
+    top: 2px;
+    left: -5px;
+    position: relative;
+    font-size: 16pt;
+    color: #e2001a;
+}
+
+.temoignages .title {
+    color: #e2001a;
+    font-size: 10pt;
+    font-weight: bold;
+    position: relative;
+}
+
+.temoignages .title:after {
+    content: "\F075";  /* this is your text. You can also use UTF-8 character codes as I do here */
+    font-family: "Font Awesome 5 Free";
+    top: -20px;
+    right: -25px;
+    position:absolute;
+    font-size: 16pt;
+ }
+
+.temoignages .content {
+    font-size: 10pt;
+    font-style: italic;
+    padding-bottom: 15px;
+    padding-left: 10px;
+}
+
+.blog-une h2 > a {
+    text-transform: none;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.blog-une a, .actualites a {
+    color: #e2001a !important;
+}
+
+.actualites .fusion-date-box {
+    background-color: #feb317 !important;
+}
+
+.actualites .fusion-format-box {
+    display: none;
+}
+
+.actualites .fusion-date-and-formats .fusion-date {
+    font-size: 20px;
+}
+.actualites .post {
+	margin-bottom: 5px;
+}
+
+.actualites h2 > a {
+    font-weight: 700;
+    text-transform: none;
+    font-size: 13px;
+}
+.actualites p {
+    margin-bottom: 5px;
+}
+
+.actualites .fusion-post-content-container {
+	margin-top: 0px;
+}
+
+.actualites article {
+    border-top: 1px solid #feb317;
+}
+
+.team .team_member {
+    float: left;
+    width: 200px;
+    height:180px;
+    margin-left:30px;
+}
+
+.team .team_member_pic {
+    float: left; 
+    padding-right:20px; 
+    height: 200px;
+}
+
+.team .team_member .entry-title {
+    margin-bottom: 5px;
+    margin-top: 0;
+}
+
+.team p {
+    margin-bottom: 5px;
+}
+
+.wpcf7-form input[type="submit"], .wpcf7-submit, .contact-submit {
+    background: #e2001a;
+}
+
+.sidebar .widget .widget-title {
+    font-weight: 700;
+    text-align: center;
+}
+
+#wrapper .fusion-widget-area .current-menu-item > a {
+    color: #e2001a;
+}
