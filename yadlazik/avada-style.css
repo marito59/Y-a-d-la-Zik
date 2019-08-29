@@ -1,38 +1,44 @@
-/* positionnement des pastilles */ 
+/* positionnement des pastilles */
+
 #slider_accueil {
     top: -20px;
 }
 
 #collectifs {
-    margin-left:60px; 
+    margin-left: 60px;
     float: left;
 }
 
 #particuliers {
-    margin-top:-40px;
-    margin-left:10px;
+    margin-top: -40px;
+    margin-left: 10px;
     float: left;
 }
 
-#coaching {
+#stages {
     margin-top: -110px;
-    margin-left:100px;
+    margin-left: 100px;
     float: left;
 }
+
 
 /* reserrement des items de menu dans le footer */
+
 .fusion-widget-area .widget_nav_menu li {
     border-bottom: 0;
 }
 
+
 /* menu principal */
+
 #menu-menu-principal {
     text-transform: uppercase;
 }
 
 .fusion-main-menu {
-    top:-10px;
+    top: -10px;
 }
+
 
 /*
 .page-id-8655 #main {
@@ -41,15 +47,26 @@
     z-index:999999;
 }
 */
-.read-more {
-    color: #e2001a !important;
+
+@media only screen and (max-width: 800px) {
+    #main,
+    .wrapper_blank #main {
+        /*background-image: url("//beta-yadlavoix.ovh/wp-content/uploads/2018/12/background-accueil-mob.png");*/
+        background-image: none;
+    }
 }
 
-h1, h2 {
+.read-more {
+    color: #201752 !important;
+}
+
+h1,
+h2 {
     text-transform: uppercase;
 }
 
-p {
+p,
+.content li {
     text-align: justify;
 }
 
@@ -58,7 +75,7 @@ form p {
 }
 
 .fusion-footer-widget-column .menu li {
-    padding:0;
+    padding: 0;
 }
 
 .widget-title {
@@ -66,11 +83,15 @@ form p {
 }
 
 .brand-color {
-    color: #e2001a;
+    color: #201752;
+}
+
+.secondary-color {
+    color: #a4ebfd;
 }
 
 #news .post {
-	margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 ul#news {
@@ -78,31 +99,31 @@ ul#news {
 }
 
 #news li {
-	list-style: none;
-	margin: 0;
+    list-style: none;
+    margin: 0;
 }
 
 #news .post small {
-	margin: 0;
-	padding: 0;
-	font-size: 11px;
-	font-weight: bold;
-	color: #e2001a;
+    margin: 0;
+    padding: 0;
+    font-size: 11px;
+    font-weight: bold;
+    color: #201752;
 }
 
 #news .post h5 {
-	margin: 0;
-	padding: 0;
-	font-family: Helvetica, Arial, sans-serif;
-	font-size: 11px;
-	font-weight: bold;
-	color: #e2001a;
-	text-transform: none;
-	text-align: left;
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #201752;
+    text-transform: none;
+    text-align: left;
 }
 
 #news a {
-    color: #e2001a;
+    color: #201752;
 }
 
 #news p {
@@ -110,71 +131,72 @@ ul#news {
     margin-bottom: 5px;
 }
 
-#wrapper .fusion-widget-area .current-menu-item > a {
-	color: #ffffff;
+#wrapper .fusion-widget-area .current-menu-item>a {
+    color: #ffffff;
 }
 
 #list_docu {
-	margin-top: 20px;
+    margin-top: 20px;
 }
 
 #list_docu li {
-	float: left;
-	width: 190px;
-	height: 85px;
-	margin: 0 30px 40px 0;
-	padding: 0;
-	list-style: none;
+    float: left;
+    width: 190px;
+    height: 85px;
+    margin: 0 30px 40px 0;
+    padding: 0;
+    list-style: none;
 }
 
-#list_docu > li > .picto {
-	float: left;
-	margin-right: 5px;
+#list_docu>li>.picto {
+    float: left;
+    margin-right: 5px;
 }
 
 #list_docu li h2 {
-	margin: 0;
-	font-family: Helvetica, Arial, sans-serif;
-	font-size: 13px;
-	text-transform: none;
-	text-align: left;
-	color: #e2001a;
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 13px !important;
+    text-transform: none;
+    text-align: left;
+    color: #201752;
 }
 
 #downloads li {
-	margin: 0;
-	padding: 5px 0;
-	list-style: none;
-	padding-left: 25px;
-/*	background: url('/wp-content/uploads/2018/11/dl.png') no-repeat left center;*/
+    margin: 0;
+    padding: 5px 0;
+    list-style: none;
+    padding-left: 25px;
+    /*	background: url('/wp-content/uploads/2018/11/dl.png') no-repeat left center;*/
 }
 
-
 #downloads li:before {
-    content: "\F15B";  /* this is your text. You can also use UTF-8 character codes as I do here */
+    content: "\F15B";
+    /* this is your text. You can also use UTF-8 character codes as I do here */
     font-family: "Font Awesome 5 Free";
     top: 2px;
     left: -5px;
     position: relative;
     font-size: 16pt;
-    color: #e2001a;
+    color: #201752;
 }
 
 .temoignages .title {
-    color: #e2001a;
+    color: #201752;
     font-size: 10pt;
     font-weight: bold;
     position: relative;
 }
 
 .temoignages .title:after {
-    content: "\F075";  /* this is your text. You can also use UTF-8 character codes as I do here */
+    content: "\F075";
+    /* this is your text. You can also use UTF-8 character codes as I do here */
     font-family: "Font Awesome 5 Free";
     top: -20px;
     right: -25px;
-    position:absolute;
+    position: absolute;
     font-size: 16pt;
- }
+}
 
 .temoignages .content {
     font-size: 10pt;
@@ -183,18 +205,19 @@ ul#news {
     padding-left: 10px;
 }
 
-.blog-une h2 > a {
+.blog-une h2>a {
     text-transform: none;
     font-weight: 700;
     font-size: 18px;
 }
 
-.blog-une a, .actualites a {
-    color: #e2001a !important;
+.blog-une a,
+.actualites a {
+    color: #201752 !important;
 }
 
 .actualites .fusion-date-box {
-    background-color: #feb317 !important;
+    background-color: #a4ebfd !important;
 }
 
 .actualites .fusion-format-box {
@@ -204,58 +227,176 @@ ul#news {
 .actualites .fusion-date-and-formats .fusion-date {
     font-size: 20px;
 }
+
 .actualites .post {
-	margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 
-.actualites h2 > a {
+.actualites h2>a {
     font-weight: 700;
     text-transform: none;
     font-size: 13px;
 }
+
 .actualites p {
     margin-bottom: 5px;
 }
 
 .actualites .fusion-post-content-container {
-	margin-top: 0px;
+    margin-top: 0px;
 }
 
 .actualites article {
-    border-top: 1px solid #feb317;
+    border-top: 1px solid #a4ebfd;
 }
 
 .team .team_member {
     float: left;
     width: 200px;
-    height:180px;
-    margin-left:30px;
+    height: 180px;
+    margin-left: 30px;
 }
 
 .team .team_member_pic {
-    float: left; 
-    padding-right:20px; 
+    float: left;
+    padding-right: 20px;
     height: 200px;
 }
 
 .team .team_member .entry-title {
     margin-bottom: 5px;
     margin-top: 0;
+    color: #0b9ed5;
+}
+
+.team .team_member a {
+    color: #201752;
 }
 
 .team p {
     margin-bottom: 5px;
 }
 
-.wpcf7-form input[type="submit"], .wpcf7-submit, .contact-submit {
-    background: #e2001a;
+
+/* style du titre dans la page d'un membre de l'équipe
+ * deux sous-styles pas utilisés : team_member_name et team_member_desc */
+
+.team_member_header {
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #201752;
 }
 
-.sidebar .widget .widget-title {
+.team_member_header .team_member_name,
+.team_member_header .team_member_desc {
+    font-size: 11pt;
+}
+
+
+/* style de la widget des membres de l'équipe */
+
+.team_listing {
+    margin-bottom: 15px;
+}
+
+.team_listing .team_member_name {
+    color: #201752;
+    font-weight: 600;
+}
+
+.team_listing .team_member_desc {
+    font-style: italic;
+}
+
+.wpcf7-form input[type="submit"],
+.wpcf7-submit,
+.contact-submit {
+    background: #201752;
+}
+
+.widget .widget-title {
     font-weight: 700;
     text-align: center;
 }
 
-#wrapper .fusion-widget-area .current-menu-item > a {
-    color: #e2001a;
+#wrapper .fusion-widget-area .current-menu-item>a {
+    color: #201752;
+}
+
+.adhesion {
+    padding: 20px;
+    margin: 10px;
+    display: block;
+    background-color: #a4ebfd10;
+}
+
+
+/* fait que les blocs de la page nos cours aient la même taille quel que soit le contenu */
+
+.nos-cours .title {
+    height: 75px;
+}
+
+
+/* masquer le bouton add_to_cart dans le shortcode Products pour obliger de passer par la page produit */
+
+.ydlv-products .add_to_cart_button {
+    display: none;
+}
+
+
+/* masquer le bouton Voir le produit qui affichage le Plan de paiement dans la page produit */
+
+._sumo_pp_plan_view_more {
+    visibility: hidden;
+}
+
+
+/* customize single product page title */
+
+.single-product #main .product h1.product_title {
+    font-family: inherit;
+    color: #201752;
+    font-weight: 700;
+}
+
+
+/* largeur du menu du panier */
+
+.fusion-menu-cart-items {
+    width: 300px;
+}
+
+
+/* supprime l'affichage des produits apparentés */
+
+.related.products {
+    display: none;
+}
+
+
+/* baisse le titre dans la page */
+
+.fusion-page-title-bar .fusion-page-title-row h1 {
+    padding-top: 30px;
+    padding-left: 100px;
+}
+
+
+/* baisse le titre dans woocommerce et corrige l'absence de blanc à la fin dû à la suppression des produits liés */
+
+.woocommerce-container #content {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+
+/* corriger pb d'affichage image dans widget */
+
+#media_image-3,
+#media_image-5,
+#media_image-6,
+#media_image-7 {
+    clear: both;
+    padding-top: 40px;
 }
