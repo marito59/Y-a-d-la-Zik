@@ -400,3 +400,16 @@ ul#news {
     clear: both;
     padding-top: 40px;
 }
+
+.lire {
+    background-image: linear-gradient(#0b9ed520, #0b9ed570);
+    font-weight: bold;
+    color: #392dc2;
+    padding: 3px 10px 3px 10px;
+}
+
+.lire::before {
+    content: "\F101 ";
+    /* this is your text. You can also use UTF-8 character codes as I do here */
+    font-family: "Font Awesome 5 Free";
+}
