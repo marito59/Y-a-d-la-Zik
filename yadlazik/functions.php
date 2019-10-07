@@ -96,7 +96,7 @@
 		}
 	}
  */
-	// display file attached to page by ACF
+/*	// display file attached to page by ACF
 	function cma_acf_attachment ( $file ) {
 		echo '<li class="' . join( ' ', get_post_class() ) . '" id="attachment-' . $file["ID"] . '">';
 		echo '<img class="picto" src="' . get_bloginfo('stylesheet_directory') . '/images/docu.png" alt="Document" />';
@@ -141,7 +141,7 @@
 			echo '</ul>';
 		}
 	}
-
+*/
 	// Modifie  la présentation de l'article (single) de la catégorie equipe pour inclure le titre et le champ type_enseignement au début du texte 
 	// Vient en remplacement du titre normal qui n'est pas affiché par Avada
 	function cma_modify_team_post_content( $content ) {
@@ -198,13 +198,13 @@
 	} */
 
 	// Vérifie si l'adhésion produit woocommerce se trouve dans le panier
-	// le Product ID est 9472
+	// le Product ID est 10667
 	function ydlv_is_adhesion_in_cart() {
 		foreach( WC()->cart->get_cart() as $cart_item_key => $values ) {
 			// est-il déjà dans le panier, si oui, on  ne l'ajoute pas
 			$_product = $values['data'];
 		
-			if( 9472 == $_product->id ) {
+			if( 10667 == $_product->id ) {
 				return true;
 			}
 		}
@@ -223,17 +223,17 @@
 		return false;	
 	}
 	
-	// ajoute le produit adhésion au panier (product ID 9472)
+	// ajoute le produit adhésion au panier (product ID 10667)
 	// cette action est déclenchée quand on ajoute un produit au panier
 	function ydlv_add_adhesion ( $cart_item_key, $product_id ) {
-		if ( $product_id == 9472 ) {
+		if ( $product_id == 10667 ) {
 			// inutile de l'ajouter si c'est lui qu'on ajoute
 			return;
 		}
 		$bInCart = ydlv_is_adhesion_in_cart();
 		$bAdhesionRequired = ydlv_adhesion_needed();
 		if (!$bInCart && $bAdhesionRequired) {
-			WC()->cart->add_to_cart( 9472, 1 );
+			WC()->cart->add_to_cart( 10667, 1 );
 		}
 	}
 	
@@ -244,14 +244,18 @@
 	// dans la gestion de l'adhésion
 	function ydlv_msg_adhesion () {
 		$bInCart = ydlv_is_adhesion_in_cart();
-		$msg = "<span class='adhesion'>L'adhésion à l'association Y a d'la voix ! est obligatoire pour certaines activités. ";
+		$msg = "<span class='adhesion'>";
+		$msg .= "L'adhésion à l'association Y a d'la Voix ! est obligatoire pour les cours de Y a d'la Zik ! à la carte ou à la saison. ";
+
 		if ($bInCart) {
 			$msg .= "L'adhésion figure dans votre panier. ";
 		} else {
 			$msg .= "L'adhésion ne figure pas dans votre panier. ";
 		}
-		$msg .= sprintf("Pensez à %s ce produit à votre panier si vous %s adhérent. ", $bInCart ? "retirer" : "ajouter", $bInCart ? "êtes déjà" : "n'êtes pas encore");
-		$msg .= $bInCart ? "" : "Pour ajouter l'adhésion au panier, cliquez sur le bouton ci-dessous" . do_shortcode("[add_to_cart id=\"9472\" show_price=\"FALSE\" style=\"border:0px solid #e2001a; padding: 6px; width:260px;\"]");
+		$msg .= sprintf("Pensez à %s votre panier si vous %s adhérent. ", $bInCart ? "retirer ce produit de" : "ajouter ce produit à", $bInCart ? "êtes déjà" : "n'êtes pas encore");
+		$msg .= $bInCart ? "" : "Pour ajouter l'adhésion au panier, cliquez sur le bouton ci-dessous" . do_shortcode("[add_to_cart id=\"10667\" show_price=\"FALSE\" style=\"border:0px solid #e2001a; padding: 6px; width:260px;\"]");
+
+		$msg .= "Nous vous rappelons que l'adhésion est valable un an de date à date.<br /><br />";
 		$msg .= "</span>";
 	
 		echo $msg;
@@ -280,4 +284,49 @@
 	 * Note : ne semble pas fonctionner - remplacé par l'option CSS
  	 */
 	remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+
+	
+/**
+ * Ajout de paramètres personnalisés pour le filtrage des Docuents à télécharger
+ * Description : on filtre la query sur la date de fin du document définie avec ACF
+ * 		et on ordonne le résultat sur l'ordre d'affichage aussi défini dans ACF
+ * 		Il y a dnc 2 meta_key. Pour résoudre cela, on utilise un paramère spécifique
+ * 		pour stocker le meta_key de la date et onn l'injecte dans une meta_query
+ * @author CMA à partir du code de Bill Erickson
+ * @link http://www.billerickson.net/shortcut-args-for-display-posts-shortcode
+ *
+ * @param array $args, WP Query arguments
+ * @param array $atts, shortcode arguments
+ * @return array $args
+ */
+function cma_dps_date_fin_filter( $args, $atts ) {
+	// If neither of my custom parameters are in use, return the $args (no modifications necessary)
+if( ! ( isset( $atts['date_fin'] ) ) )
+	return $args;
+
+// Set up a tax query, using the existing tax query if there is one	
+$meta_query = isset( $args['meta_query'] ) ? $args['meta_query'] : array();
+
+// If they specified date_fin, include that in the meta query
+if( isset( $atts['date_fin'] ) ) {
+	$meta_query[] = array(
+		'key' => 'date_fin',
+		'value'    => date('Y-m-d', strtotime($atts['date_fin'])),
+		'compare'    => ">=",
+		'type'		=> 'DATE',
+	);
+}
+
+// For Multiple tax queries, ensure results match both queries
+if( 1 < count( $meta_query ) && !isset( $meta_query['relation'] ) )
+	$meta_query['relation'] = 'AND';
+
+$args['meta_query'] = $meta_query;
+
+//var_dump($args);
+
+return $args;
+
+}
+add_filter( 'display_posts_shortcode_args', 'cma_dps_date_fin_filter', 10, 2 );
 ?>
