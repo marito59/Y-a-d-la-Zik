@@ -329,4 +329,34 @@ return $args;
 
 }
 add_filter( 'display_posts_shortcode_args', 'cma_dps_date_fin_filter', 10, 2 );
+
+/**
+ * @snippet       Disable Payment Method for Specific Category
+ * @how-to        Watch tutorial @ https://businessbloomer.com/?p=19055
+ * @author        Rodolfo Melogli
+ * @compatible    WC 3.6.5
+ * @donate $9     https://businessbloomer.com/bloomer-armada/
+ */
+  
+add_filter( 'woocommerce_available_payment_gateways', 'bbloomer_unset_gateway_by_category' );
+  
+function bbloomer_unset_gateway_by_category( $available_gateways ) {
+	//print_r($available_gateways);
+    if ( is_admin() ) return $available_gateways;
+    if ( ! is_checkout() ) return $available_gateways;
+    $unset = false;
+    $category_ids = array( 35 );
+    foreach ( WC()->cart->get_cart_contents() as $key => $values ) {
+        $terms = get_the_terms( $values['product_id'], 'product_cat' );    
+        foreach ( $terms as $term ) {        
+            if ( in_array( $term->term_id, $category_ids ) ) {
+                $unset = true;
+                break;
+            }
+        }
+    }
+    if ( $unset == true ) unset( $available_gateways['cheque'] );
+    return $available_gateways;
+}
+
 ?>
